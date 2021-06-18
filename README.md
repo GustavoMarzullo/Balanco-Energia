@@ -11,9 +11,16 @@ Caso esteja no Windows e o cmd aprensente problemas no display de caracteres: ht
 
 ## Exemplo de ultilização
 
-__Entrada do reator(450ºC):__ 120,5 mol/s de N2; 32,02 mol/s de O2; 32,02 mol/s de SO2
+__Entrada do reator(450ºC):__ 
+  - 120,5 mol/s de N2 
+  - 32,02 mol/s de O2 
+  - 32,02 mol/s de SO2
 
-__Saída do reator(550ºC):__ 120,5 mol/s de N2; 21,62 mol/s de O2; 11,22 mol/s de SO2; 20,82 mol/s de SO3
+__Saída do reator(550ºC):__ 
+  - 120,5 mol/s de N2 
+  - 21,62 mol/s de O2 
+  - 11,22 mol/s de SO2
+  - 20,82 mol/s de SO3
 
 ### 1º Passo: Declarar o tipo de processo
 ![Passo 1](imagens/1.png)
