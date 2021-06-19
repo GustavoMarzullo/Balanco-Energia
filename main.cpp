@@ -96,7 +96,7 @@ bool ChecarExitencia(const string& myfile){//checa se myfile existe
 }
 
 void CriarArquivo(string filename){//checa a existência do arquivo. se não existir cria um novo
-    filename+=".txt";
+    filename+=".csv";
     file_name=filename;
     if(not ChecarExitencia(filename)){
         fstream myfile;
@@ -248,13 +248,13 @@ void SalvarArquivo(){
     if(salvar){
         fstream myfile;
         myfile.open(file_name,ios::app);
-        myfile<<"i\t   n_in\t    Ĥ_in\t   n_out\t   Ĥ_out\n";
+        myfile<<"i,"<<"n_in,"<<"Ĥ_in,"<<"n_out,"<<"Ĥ_out"<<endl;
         for(int i=0;i!=numero_termos;++i){
-            myfile<<nomes[i]<<"\t   "<<vazao_in[i]<<"\t   "<<entalpia_especifica_in[i]<<"\t   "<<vazao_out[i]<<"\t   "<<entalpia_especifica_out[i]<<endl;
+            myfile<<nomes[i]<<","<<vazao_in[i]<<","<<entalpia_especifica_in[i]<<","<<vazao_out[i]<<","<<entalpia_especifica_out[i]<<endl;
         }
-        myfile<<"\nEntalpia Total de entrada = "<<entalpia_total_in<<endl;
-        myfile<<"Entalpia total de saída = "<<entalpia_total_out<<endl;
-        myfile<<"Variação de entalpia = "<<delta<<endl;
+        myfile<<"\nEntalpia Total de entrada,"<<entalpia_total_in<<endl;
+        myfile<<"Entalpia total de saída,"<<entalpia_total_out<<endl;
+        myfile<<"Variação de entalpia,"<<delta<<endl;
         myfile.close();
     }
 }
