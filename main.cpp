@@ -248,7 +248,7 @@ void SalvarArquivo(){
     if(salvar){
         fstream myfile;
         myfile.open(file_name,ios::app);
-        myfile<<"i,"<<"n_in,"<<"Ĥ_in,"<<"n_out,"<<"Ĥ_out"<<endl;
+        myfile<<"i,"<<"n_in,"<<"H_in,"<<"n_out,"<<"H_out"<<endl;
         for(int i=0;i!=numero_termos;++i){
             myfile<<nomes[i]<<","<<vazao_in[i]<<","<<entalpia_especifica_in[i]<<","<<vazao_out[i]<<","<<entalpia_especifica_out[i]<<endl;
         }
