@@ -125,6 +125,9 @@ void BoasVindas(){
                 cout<<"\nArquivo já existente. Escolha outro nome\n"<<endl;
             }
         }
+        else{
+            break;
+        }
     }
 
     cout<<"\nO sistema tem reação?[S/N]"<<endl;
@@ -258,8 +261,9 @@ void SalvarArquivo(){
         myfile<<"Entalpia total de saída,"<<entalpia_total_out<<endl;
         myfile<<"Variação de entalpia,"<<delta<<endl;
         myfile.close();
+        cout<<"\nArquivo salvo na pasta atual";
     }
-    cout<<"\nArquivo salvo na pasta atual";
+    
 }
 //####################################################  FIM  ######################################################################
 
