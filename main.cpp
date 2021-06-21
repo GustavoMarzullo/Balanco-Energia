@@ -96,19 +96,12 @@ bool ChecarExitencia(const string& myfile){//checa se myfile existe
 }
 
 void CriarArquivo(string filename){//checa a existência do arquivo. se não existir cria um novo
-    filename+=".csv";
-    file_name=filename;
-    if(not ChecarExitencia(filename)){
-        fstream myfile;
-        myfile.open(filename,ios::out); //create the file
-        printf("\n");
-        cout<<"Arquivo criado com sucesso!"<<endl;
-        myfile.close();
-    }
-    else{
-        printf("\n");
-        cerr<<"Arquivo já existente. Escolha outro nome"<<endl;
-    }
+    file_name=filename; //guardando o nome do arquivo na variável globals
+    fstream myfile;
+    myfile.open(filename,ios::out); //criando o arquivo
+    printf("\n");
+    cout<<"Arquivo criado com sucesso!"<<endl;
+    myfile.close();
 }
 
 void BoasVindas(){
@@ -117,12 +110,21 @@ void BoasVindas(){
     cout<<"Deseja salvar um arquivo com os resultados?[S/N]"<<endl;
     getline(cin,input);
     printf("\n");
-    if(input == "S" or input =="s"){
-        string nome_arquivo;
-        cout<<"Qual o nome do arquivo que deseja salvar?"<<endl;
-        getline(cin,nome_arquivo);
-        CriarArquivo(nome_arquivo);
-        salvar=true;
+    while(true){
+        if(input == "S" or input =="s"){
+            string nome_arquivo;
+            cout<<"Qual o nome do arquivo que deseja salvar?"<<endl;
+            getline(cin,nome_arquivo);
+            nome_arquivo+=".csv";
+            if(not ChecarExitencia(nome_arquivo)){
+                CriarArquivo(nome_arquivo);
+                salvar=true;
+                break;
+            }
+            else{
+                cout<<"\nArquivo já existente. Escolha outro nome\n"<<endl;
+            }
+        }
     }
 
     cout<<"\nO sistema tem reação?[S/N]"<<endl;
@@ -257,6 +259,7 @@ void SalvarArquivo(){
         myfile<<"Variação de entalpia,"<<delta<<endl;
         myfile.close();
     }
+    cout<<"\nArquivo salvo na pasta atual";
 }
 //####################################################  FIM  ######################################################################
 
